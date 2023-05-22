@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="th">
+    <head>
+        <title>จริงพี่ พี่ว่าไงผมก็ว่างั้น</title>
+
+        <meta charset="UTF-8" />
+        <link rel="icon" href="/icon.jpg" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="title" content="จริงพี่ พี่ว่าไงผมก็ว่างั้น" />
+        <meta
+            name="description"
+            content="สร้างรูป 'จริงพี่' เองเลยสิ รออะไรอยู่ จริงพี่ พี่ว่าไงผมก็ว่างั้น"
+        />
+        <meta name="author" content="SaltyAom" />
+        <link rel="canonical" href="https://jing-p.saltyaom.com" />
+        <meta property="og:title" content="จริงพี่ พี่ว่าไงผมก็ว่างั้น" />
+        <meta
+            property="og:description"
+            content="สร้างรูป 'จริงพี่' เองเลยสิ รออะไรอยู่ จริงพี่ พี่ว่าไงผมก็ว่างั้น"
+        />
+        <meta property="article:author" content="SaltyAom" />
+
+        <meta property="og:site_name" content="จริงพี่ พี่ว่าไงผมก็ว่างั้น" />
+        <meta property="og:image" content="https://jing-psaltyaom.com/og.jpg" />
+        <meta property="og:image:width" content="1920" />
+        <meta property="og:image:height" content="1080" />
+        <meta property="og:locale" content="th_TH" />
+        <meta property="og:type" content="website" />
+    </head>
+    <body>
+        <form
+            id="form"
+            class="flex flex-col justify-center items-center gap-4 w-full min-h-screen p-4"
+        >
+            <canvas id="jing-p"></canvas>
+            <section class="flex flex-row justify-between gap-6">
+                <label class="file" tabindex="1">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <path
+                            d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+                        ></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                    อัพรูปเลยพี่
+                    <input
+                        id="file"
+                        type="file"
+                        class="file"
+                        title="อัพรูปเลยพี่"
+                    />
+                </label>
+
+                <section class="flex flex-col gap-6">
+                    <input
+                        id="title"
+                        class="field"
+                        value="จริงพี่"
+                        placeholder="จริงพี่"
+                    />
+                    <input
+                        id="caption"
+                        class="field"
+                        value="พี่ว่างั้นผมก็ว่างั้น"
+                        placeholder="พี่ว่างั้นผมก็ว่างั้น"
+                    />
+                </section>
+            </section>
+
+            <section
+                class="flex flex-col sm:flex-row justify-between gap-4 mt-6 w-full max-w-lg"
+            >
+                <label
+                    class="flex flex-col-reverse justify-center items-center gap-2 w-full text-base text-orange-700"
+                >
+                    ซ้าย-ขวา
+                    <input
+                        id="x"
+                        class="range range-warning"
+                        type="range"
+                        min="-960"
+                        max="960"
+                        step="5"
+                    />
+                </label>
+
+                <label
+                    class="flex flex-col-reverse justify-center items-center gap-2 w-full text-base text-orange-700"
+                >
+                    ขึ้น-ลง
+                    <input
+                        id="y"
+                        class="range range-warning"
+                        type="range"
+                        min="-540"
+                        max="540"
+                        step="5"
+                    />
+                </label>
+
+                <label
+                    class="flex flex-col-reverse justify-center items-center gap-2 w-full text-base text-orange-700"
+                >
+                    ขนาด
+                    <input
+                        id="scale"
+                        class="range range-warning"
+                        type="range"
+                        min="0.5"
+                        max="2"
+                        value="1.675"
+                        step="0.025"
+                    />
+                </label>
+            </section>
+
+            <button id="save">เซฟเลยพี่</button>
+        </form>
+
+        <a
+            href="https://github.com/saltyaom/jing-p"
+            target="_blank"
+            class="absolute top-2 right-2 text-orange-400 bg-orange-100 p-2 rounded-lg"
+        >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-github"
+            >
+                <path
+                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                ></path>
+            </svg>
+        </a>
+
+        <script type="module" src="/src/main.ts"></script>
+    </body>
+</html>

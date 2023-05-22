@@ -1,0 +1,34 @@
+@tailwind base
+@tailwind components
+@tailwind utilities
+
+html,
+body
+    @apply bg-orange-50
+
+#jing-p
+    @apply w-full h-full bg-orange-400 rounded-lg mb-8
+    aspect-ratio: 16/9
+    max-width: 512px
+    max-height: 288px
+    // box-shadow: 0 16px 40px rgba(0,0,0,.2)
+
+.file
+    @apply flex flex-col justify-center items-center gap-4 text-base text-orange-900 appearance-none bg-orange-100 p-4 rounded-t-lg cursor-pointer  border-0 border-b border-orange-900 hover:border-orange-700 focus:border-orange-700 focus:border-b-2 outline-none
+    width: 122px
+    height: 122px
+    transition: border .2s ease-out
+
+    & > svg
+        @apply scale-125
+
+    & > input[type='file']
+        @apply hidden
+
+.field
+    @apply text-xl text-orange-900 w-full bg-orange-100 py-2.5 px-4 rounded-t-md border-0 border-b border-orange-900 hover:border-orange-700 focus:border-orange-700 focus:border-b-2 outline-none
+    max-width: 15rem
+    transition: border .2s ease-out
+
+#save
+    @apply mt-4 text-orange-700 text-xl px-5 py-2.5 bg-orange-200/50 rounded-lg hover:rounded-3xl focus:rounded-3xl transition-all ease-out
