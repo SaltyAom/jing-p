@@ -202,12 +202,27 @@ document.addEventListener('DOMContentLoaded', () => {
         update()
     })
 
+    const isIOS =
+        [
+            'iPad Simulator',
+            'iPhone Simulator',
+            'iPod Simulator',
+            'iPad',
+            'iPhone',
+            'iPod'
+        ].includes(navigator.platform) ||
+        // iPad on iOS 13 detection
+        (navigator.userAgent.includes('Mac') && 'ontouchend' in document)
+
     on(form, 'submit', (event) => {
         event.preventDefault()
 
         const a = document.createElement('a')
         a.href = canvas.toDataURL('image/jpeg', 1.0)
-        a.download = `${title}.jpg`
+
+        if (isIOS) a.target = '_blank'
+        else a.download = 'จริงพี่.jpg'
+
         a.click()
     })
 })
