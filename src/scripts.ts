@@ -217,6 +217,17 @@ document.addEventListener('DOMContentLoaded', () => {
     on(form, 'submit', (event) => {
         event.preventDefault()
 
+        if (event.submitter?.id === "copy") {
+            canvas.toBlob(
+                (blob) =>
+                navigator.clipboard.write([
+                    new ClipboardItem({ [blob!.type]: blob! }),
+                ]),
+                "image/png"
+            )
+            return
+        }
+
         const a = document.createElement('a')
         a.href = canvas.toDataURL('image/jpeg', 1.0)
 
